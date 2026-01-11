@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Puspa Petals - Fresh flower shop in Ipoh, Malaysia offering beautiful arrangements for all occasions">
+    <meta name="keywords" content="flowers, Ipoh, Malaysia, bouquets, delivery, flower shop">
+    <meta name="author" content="[Your Name]">
+    
+   
+    <meta property="og:title" content="PUSPA PETALS - Flower Shop Ipoh">
+    <meta property="og:description" content="Fresh flowers for every occasion in Ipoh, Malaysia">
+    <meta property="og:type" content="website">
+    
+    <title>PUSPA PETALS - Flower Shop Ipoh, Malaysia</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌷</text></svg>">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!--ICONS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Colorblind Accessibility CSS -->
+    <style>
+        /* Colorblind Accessibility Controls - Added Styles */
+        .accessibility-controls {
+            position: fixed;
+            top: 120px;
+            right: 20px;
+            z-index: 1001;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            padding: 10px;
+            min-width: 180px;
+        }
+
+        .accessibility-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .accessibility-btn:hover {
+            background: #45a049;
+        }
+
+        .colorblind-options {
+            display: none;
+            margin-top: 10px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+
+        .colorblind-options.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .color-mode-btn {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 5px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            text-align: left;
+            transition: all 0.2s;
+        }
+
+        .color-mode-btn:hover {
+            background: #f5f5f5;
+            transform: translateX(3px);
+        }
+
+        .color-mode-btn.active {
+            background: #e8f5e9;
+            border-color: #4CAF50;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Colorblind Mode Styles */
+        .colorblind-protanopia {
+            filter: url('#protanopia-filter');
+        }
+
+        .colorblind-deuteranopia {
+            filter: url('#deuteranopia-filter');
+        }
+
+        .colorblind-tritanopia {
+            filter: url('#tritanopia-filter');
+        }
+
+        .colorblind-achromatopsia {
+            filter: grayscale(100%) contrast(120%);
+        }
+
+        /* Pattern overlays flower images for monochrome mode */
+        body.colorblind-achromatopsia .flower-img {
+            position: relative;
+        }
+
+        body.colorblind-achromatopsia .flower-img::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: repeating-linear-gradient(45deg, 
+                rgba(255,255,255,0.1) 0px, 
+                rgba(255,255,255,0.1) 2px, 
+                transparent 2px, 
+                transparent 4px);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- HEADER -->
+    <header role="banner">
+        <div class="container">
+            <h1>PUSPA PETALS</h1>
+            <p class="tagline">Flower Shop in Ipoh, Malaysia</p>
+            <p>#CintaPuspa</p>
+        </div>
+    </header>
+    
+    <!-- Colorblind Accessibility Toggle -->
+    <div class="accessibility-controls" aria-label="Accessibility controls">
+        <button id="colorblind-toggle" class="accessibility-btn" aria-label="Open colorblind options">
+            <i class="fas fa-eye" aria-hidden="true"></i> Colorblind Mode
+        </button>
+        <div id="colorblind-options" class="colorblind-options" aria-hidden="true">
+            <button class="color-mode-btn active" data-mode="default">Normal Vision</button>
+            <button class="color-mode-btn" data-mode="protanopia">Protanopia (Red-Weak)</button>
+            <button class="color-mode-btn" data-mode="deuteranopia">Deuteranopia (Green-Weak)</button>
+            <button class="color-mode-btn" data-mode="tritanopia">Tritanopia (Blue-Weak)</button>
+            <button class="color-mode-btn" data-mode="achromatopsia">Monochrome</button>
+        </div>
+    </div>
+    
+    <!-- Basic navigation with ARIA label -->
+    <nav aria-label="Main Navigation">
+        <div class="container">
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-list">
+                <li><a href="#home" aria-current="page">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#flowers">Our Flowers</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#cart" aria-label="Shopping Cart">🛒 Cart <span id="cart-count" class="cart-badge">0</span></a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container" id="main-content">
+        <!-- BANNER SECTION -->
+        <section id="home" class="banner">
+            <div class="banner-content">
+                <h2>Welcome to Puspa Petals</h2>
+                <p>Fresh flowers for every occasion Whenever, Wherever & However</p>
+                <a href="#flowers" class="btn">View Our Flowers</a>
+            </div>
+        </section>
+        
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <h2>About Our Flower Shop</h2>
+            <p>Puspa Petals is a local flower shop in Ipoh, Malaysia. We provide beautiful flower arrangements for birthdays, weddings, anniversaries, and other special events. Our flowers are always fresh and beautifully arranged.</p>
+            <p>Blooming since 2025</p>
+            
+            <div class="simple-form">
+                <h3>Sign up for updates</h3>
+                <form id="newsletter-form" aria-label="Newsletter signup form">
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" placeholder="Enter your email" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name (optional):</label>
+                        <input type="text" id="name" placeholder="Your name">
+                    </div>
+                    <button type="submit" class="btn" aria-label="Subscribe to newsletter">Subscribe</button>
+                </form>
+                <p id="form-message" class="form-message" aria-live="polite"></p>
+            </div>
+        </section>
+        
+        <!-- FLOWERS SECTION -->
+        <section id="flowers">
+            <h2>Our Flower Collections</h2>
+            <p>We have different types of flowers for different occasions. Here are some of our popular flowers:</p>
+            
+            <div class="flower-grid">
+                <div class="flower-item" data-flower="roses">
+                    <img src="images/roses.webp" alt="Red roses bouquet arranged in a vase" class="flower-img" loading="lazy">
+                    <h3>Roses</h3>
+                    <p>Beautiful red roses for romantic occasions.</p>
+                    <p><strong>Price:</strong> RM 50 - RM 150</p>
+                    <button class="btn add-to-cart" data-name="Roses" data-price="50" aria-label="Add Roses to shopping cart">Add to Cart</button>
+                </div>
+                
+                <div class="flower-item" data-flower="sunflowers">
+                    <img src="images/sunflowers.webp" alt="Bright yellow sunflowers in a field" class="flower-img" loading="lazy">
+                    <h3>Sunflowers</h3>
+                    <p>Bright and cheerful sunflowers.</p>
+                    <p><strong>Price:</strong> RM 40 - RM 120</p>
+                    <button class="btn add-to-cart" data-name="Sunflowers" data-price="40" aria-label="Add Sunflowers to shopping cart">Add to Cart</button>
+                </div>
+                
+                <div class="flower-item" data-flower="tulips">
+                    <img src="images/tulips.webp" alt="Colorful tulips in various shades" class="flower-img" loading="lazy">
+                    <h3>Tulips</h3>
+                    <p>Colorful tulips for any occasion.</p>
+                    <p><strong>Price:</strong> RM 35 - RM 100</p>
+                    <button class="btn add-to-cart" data-name="Tulips" data-price="35" aria-label="Add Tulips to shopping cart">Add to Cart</button>
+                </div>
+                
+                <div class="flower-item" data-flower="orchids">
+                    <img src="images/orchids.webp" alt="Beautiful white orchids in bloom" class="flower-img" loading="lazy">
+                    <h3>Orchids</h3>
+                    <p>Elegant orchids for special occasions.</p>
+                    <p><strong>Price:</strong> RM 60 - RM 180</p>
+                    <button class="btn add-to-cart" data-name="Orchids" data-price="60" aria-label="Add Orchids to shopping cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <!-- FLOWERS TABLE -->
+            <h3>Flower Price List</h3>
+            <div class="table-container" role="region" aria-label="Flower price list">
+                <table>
+                    <caption>Prices for different bouquet sizes</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Flower Type</th>
+                            <th scope="col">Small Bouquet</th>
+                            <th scope="col">Medium Bouquet</th>
+                            <th scope="col">Large Bouquet</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Roses</th>
+                            <td>RM 50</td>
+                            <td>RM 90</td>
+                            <td>RM 150</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sunflowers</th>
+                            <td>RM 40</td>
+                            <td>RM 75</td>
+                            <td>RM 120</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tulips</th>
+                            <td>RM 35</td>
+                            <td>RM 65</td>
+                            <td>RM 100</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Orchids</th>
+                            <td>RM 60</td>
+                            <td>RM 110</td>
+                            <td>RM 180</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- CART SECTION -->
+        <section id="cart">
+            <h2>Your Shopping Cart</h2>
+            <div class="cart-container">
+                <div id="cart-items" class="cart-items" aria-live="polite">
+
+                    <!-- CART ITEMS INSERT -->
+                    <p class="empty-cart-message">Your cart is empty. Add some flowers!</p>
+                </div>
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">RM 0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Delivery:</span>
+                        <span id="delivery">RM 10</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total-price">RM 10</span>
+                    </div>
+                    <button id="checkout-btn" class="btn checkout-btn" disabled aria-label="Proceed to checkout">Proceed to Checkout</button>
+                    <button id="clear-cart" class="btn btn-secondary" aria-label="Clear all items from cart">Clear Cart</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SERVICES SECTION -->
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>We offer various services to meet your flower needs:</p>
+            
+            <div class="services">
+                <div class="service-item">
+                    <div class="service-icon" aria-hidden="true">💐</div>
+                    <h3>Custom Bouquets</h3>
+                    <p>We create custom flower arrangements based on your preferences and budget.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon" aria-hidden="true">🎉</div>
+                    <h3>Event Decorations</h3>
+                    <p>Flower decorations for weddings, parties, and corporate events.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon" aria-hidden="true">🚚</div>
+                    <h3>Same-Day Delivery</h3>
+                    <p>Order before 3pm for same-day delivery in Ipoh area.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Puspa Petals Flower Shop</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <p><strong>Address:</strong> 123 Flower Street, Ipoh, Perak, Malaysia</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <p><strong>Phone:</strong> +60 12-345 6789</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <p><strong>Email:</strong> info@puspapetals.com</p>
+                    </div>
+                    
+                    <h3>Opening Hours</h3>
+                    <ul class="hours-list">
+                        <li><span class="day">Monday - Friday:</span> <span class="hours">9:00 AM - 6:00 PM</span></li>
+                        <li><span class="day">Saturday:</span> <span class="hours">10:00 AM - 4:00 PM</span></li>
+                        <li><span class="day">Sunday:</span> <span class="hours">Closed</span></li>
+                    </ul>
+                    
+                    <h3>Find Us Online</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61586038695535" class="social-link" aria-label="Visit our Facebook page">
+                            <i class="fab fa-facebook"></i> facebook.com/puspapetals
+                        </a>
+                        <a href="https://www.instagram.com/puspa_petal?igsh=MXFqdTB2cmZ2M2ExdA%3D%3D&utm_source=qr" class="social-link" aria-label="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i> @puspapetals
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h3>Send us a Message</h3>
+                    <form id="contact-form" aria-label="Contact form">
+                        <div class="form-group">
+                            <label for="contact-name">Full Name *</label>
+                            <input type="text" id="contact-name" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email *</label>
+                            <input type="email" id="contact-email" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phone">Phone Number</label>
+                            <input type="tel" id="contact-phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message *</label>
+                            <textarea id="contact-message" rows="5" required aria-required="true"></textarea>
+                        </div>
+                        <button type="submit" class="btn" aria-label="Send message">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- FOOTER -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Puspa Petals</h3>
+                    <p>Fresh flowers for every occasion in Ipoh, Malaysia</p>
+                    <p class="visitor-count">Visitor #<span id="visitor-number">0</span></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#flowers">Flowers</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Thank you</h3>
+                    <p>Your request is our top priority</p>
+                    <p>We appreciate you dearly</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Puspa Petals - Flower Shop Ipoh</p>
+                <p>Flowers makes the world colourful.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- SVG Filters for Colorblind Simulation -->
+    <svg class="colorblind-filters" xmlns="http://www.w3.org/2000/svg" version="1.1" style="position: absolute; width: 0; height: 0;">
+        <defs>
+            <!-- Protanopia filter -->
+            <filter id="protanopia-filter">
+                <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0
+                                                    0.558, 0.442, 0, 0, 0
+                                                    0, 0.242, 0.758, 0, 0
+                                                    0, 0, 0, 1, 0" />
+            </filter>
+            
+            <!-- Deuteranopia filter -->
+            <filter id="deuteranopia-filter">
+                <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0
+                                                    0.7, 0.3, 0, 0, 0
+                                                    0, 0.3, 0.7, 0, 0
+                                                    0, 0, 0, 1, 0" />
+            </filter>
+            
+            <!-- Tritanopia filter -->
+            <filter id="tritanopia-filter">
+                <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0
+                                                    0, 0.433, 0.567, 0, 0
+                                                    0, 0.475, 0.525, 0, 0
+                                                    0, 0, 0, 1, 0" />
+            </filter>
+        </defs>
+    </svg>
+    
+    <!-- Print styles for receipts -->
+    <div id="print-receipt" class="print-only">
+        <!-- Receipt content generation -->
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        // Enhanced cart functionality
+        class ShoppingCart {
+            constructor() {
+                this.items = JSON.parse(localStorage.getItem('cart')) || [];
+                this.updateCartDisplay();
+                this.setupEventListeners();
+            }
+            
+            addItem(name, price, quantity = 1) {
+                const existingItem = this.items.find(item => item.name === name);
+                
+                if (existingItem) {
+                    existingItem.quantity += quantity;
+                } else {
+                    this.items.push({ name, price, quantity });
+                }
+                
+                this.saveCart();
+                this.updateCartDisplay();
+                
+                // Announce to screen readers
+                this.announceToScreenReader(`${name} added to cart`);
+            }
+            
+            removeItem(name) {
+                this.items = this.items.filter(item => item.name !== name);
+                this.saveCart();
+                this.updateCartDisplay();
+                
+                // Announce to screen readers
+                this.announceToScreenReader(`${name} removed from cart`);
+            }
+            
+            updateQuantity(name, quantity) {
+                const item = this.items.find(item => item.name === name);
+                if (item) {
+                    if (quantity <= 0) {
+                        this.removeItem(name);
+                    } else {
+                        item.quantity = quantity;
+                        this.saveCart();
+                        this.updateCartDisplay();
+                    }
+                }
+            }
+            
+            clearCart() {
+                this.items = [];
+                this.saveCart();
+                this.updateCartDisplay();
+                
+                // Announce to screen readers
+                this.announceToScreenReader('Cart cleared');
+            }
+            
+            saveCart() {
+                localStorage.setItem('cart', JSON.stringify(this.items));
+            }
+            
+            getTotal() {
+                return this.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+            }
+            
+            getItemCount() {
+                return this.items.reduce((count, item) => count + item.quantity, 0);
+            }
+            
+            announceToScreenReader(message) {
+                const announcement = document.getElementById('screen-reader-announcement') || 
+                    (() => {
+                        const div = document.createElement('div');
+                        div.id = 'screen-reader-announcement';
+                        div.className = 'sr-only';
+                        div.setAttribute('aria-live', 'polite');
+                        div.setAttribute('aria-atomic', 'true');
+                        document.body.appendChild(div);
+                        return div;
+                    })();
+                
+                announcement.textContent = message;
+                
+                // Clear after a moment
+                setTimeout(() => {
+                    announcement.textContent = '';
+                }, 1000);
+            }
+            
+            updateCartDisplay() {
+                const cartCount = document.getElementById('cart-count');
+                const cartItems = document.getElementById('cart-items');
+                const subtotal = document.getElementById('subtotal');
+                const totalPrice = document.getElementById('total-price');
+                const checkoutBtn = document.getElementById('checkout-btn');
+                
+                // Update cart count
+                if (cartCount) {
+                    cartCount.textContent = this.getItemCount();
+                    cartCount.style.display = this.getItemCount() > 0 ? 'inline' : 'none';
+                }
+                
+                // Update cart items display
+                if (cartItems) {
+                    if (this.items.length === 0) {
+                        cartItems.innerHTML = '<p class="empty-cart-message">Your cart is empty. Add some flowers!</p>';
+                    } else {
+                        cartItems.innerHTML = this.items.map(item => `
+                            <div class="cart-item" data-item="${item.name}">
+                                <div class="cart-item-info">
+                                    <h4>${item.name}</h4>
+                                    <p>RM ${item.price} each</p>
+                                </div>
+                                <div class="cart-item-controls">
+                                    <button class="quantity-btn minus" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">${item.quantity}</span>
+                                    <button class="quantity-btn plus" aria-label="Increase quantity">+</button>
+                                    <button class="remove-btn" aria-label="Remove ${item.name} from cart">×</button>
+                                </div>
+                                <div class="cart-item-total">
+                                    RM ${item.price * item.quantity}
+                                </div>
+                            </div>
+                        `).join('');
+                    }
+                }
+                
+                // Update totals
+                if (subtotal && totalPrice) {
+                    const subtotalAmount = this.getTotal();
+                    const delivery = 10; // Fixed delivery fee
+                    const total = subtotalAmount + delivery;
+                    
+                    subtotal.textContent = `RM ${subtotalAmount}`;
+                    totalPrice.textContent = `RM ${total}`;
+                    
+                    // Enable/disable checkout button
+                    if (checkoutBtn) {
+                        checkoutBtn.disabled = this.items.length === 0;
+                        checkoutBtn.setAttribute('aria-disabled', this.items.length === 0);
+                    }
+                }
+            }
+            
+            setupEventListeners() {
+                // Add to cart buttons
+                document.querySelectorAll('.add-to-cart').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const name = e.target.dataset.name;
+                        const price = parseInt(e.target.dataset.price);
+                        this.addItem(name, price);
+                    });
+                });
+                
+                // Cart item controls (delegated)
+                document.addEventListener('click', (e) => {
+                    const cartItem = e.target.closest('.cart-item');
+                    if (!cartItem) return;
+                    
+                    const itemName = cartItem.dataset.item;
+                    
+                    if (e.target.classList.contains('minus')) {
+                        const item = this.items.find(item => item.name === itemName);
+                        if (item) {
+                            this.updateQuantity(itemName, item.quantity - 1);
+                        }
+                    } else if (e.target.classList.contains('plus')) {
+                        const item = this.items.find(item => item.name === itemName);
+                        if (item) {
+                            this.updateQuantity(itemName, item.quantity + 1);
+                        }
+                    } else if (e.target.classList.contains('remove-btn')) {
+                        this.removeItem(itemName);
+                    }
+                });
+                
+                // Clear cart button
+                const clearCartBtn = document.getElementById('clear-cart');
+                if (clearCartBtn) {
+                    clearCartBtn.addEventListener('click', () => {
+                        if (this.items.length > 0 && confirm('Are you sure you want to clear your cart?')) {
+                            this.clearCart();
+                        }
+                    });
+                }
+                
+                // Checkout button
+                const checkoutBtn = document.getElementById('checkout-btn');
+                if (checkoutBtn) {
+                    checkoutBtn.addEventListener('click', () => {
+                        if (this.items.length > 0) {
+                            this.generateReceipt();
+                            window.print();
+                        }
+                    });
+                }
+            }
+            
+            generateReceipt() {
+                const receipt = document.getElementById('print-receipt');
+                if (!receipt) return;
+                
+                const date = new Date().toLocaleDateString();
+                const time = new Date().toLocaleTimeString();
+                const total = this.getTotal() + 10; // Including delivery
+                
+                receipt.innerHTML = `
+                    <div class="receipt">
+                        <h2>Puspa Petals</h2>
+                        <p>123 Flower Street, Ipoh, Perak, Malaysia</p>
+                        <p>Phone: +60 12-345 6789</p>
+                        <hr>
+                        <p>Date: ${date}</p>
+                        <p>Time: ${time}</p>
+                        <hr>
+                        <h3>Order Summary</h3>
+                        ${this.items.map(item => `
+                            <div class="receipt-item">
+                                <span>${item.name} x${item.quantity}</span>
+                                <span>RM ${item.price * item.quantity}</span>
+                            </div>
+                        `).join('')}
+                        <hr>
+                        <div class="receipt-total">
+                            <span>Subtotal:</span>
+                            <span>RM ${this.getTotal()}</span>
+                        </div>
+                        <div class="receipt-total">
+                            <span>Delivery:</span>
+                            <span>RM 10</span>
+                        </div>
+                        <div class="receipt-total">
+                            <strong>Total:</strong>
+                            <strong>RM ${total}</strong>
+                        </div>
+                        <hr>
+                        <p>Thank you for your order!</p>
+                        <p>Making memories in every order</p>
+                    </div>
+                `;
+            }
+        }
+        
+        // Form handling
+        class FormHandler {
+            constructor() {
+                this.setupForms();
+            }
+            
+            setupForms() {
+                // Newsletter form
+                const newsletterForm = document.getElementById('newsletter-form');
+                if (newsletterForm) {
+                    newsletterForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        const email = document.getElementById('email').value;
+                        const name = document.getElementById('name').value || 'Customer';
+                        
+                        if (this.validateEmail(email)) {
+                            // Simulate form submission
+                            const message = document.getElementById('form-message');
+                            message.textContent = `Thank you, ${name}! You've been subscribed.`;
+                            message.className = 'form-message success';
+                            
+                            // Reset form
+                            newsletterForm.reset();
+                            
+                            // Log submission (for demo purposes)
+                            console.log('Newsletter subscription:', { name, email, date: new Date().toISOString() });
+                        } else {
+                            const message = document.getElementById('form-message');
+                            message.textContent = 'Please enter a valid email address.';
+                            message.className = 'form-message error';
+                        }
+                    });
+                }
+                
+                // Contact form
+                const contactForm = document.getElementById('contact-form');
+                if (contactForm) {
+                    contactForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        
+                        const name = document.getElementById('contact-name').value;
+                        const email = document.getElementById('contact-email').value;
+                        const phone = document.getElementById('contact-phone').value;
+                        const message = document.getElementById('contact-message').value;
+                        
+                        if (this.validateEmail(email) && name && message) {
+                            // Simulate form submission
+                            alert(`Thank you, ${name}! Your message has been sent. We'll contact you at ${email} soon.`);
+                            
+                            // Reset form
+                            contactForm.reset();
+                            
+                            // Log submission (for demo purposes)
+                            console.log('Contact form submission:', { name, email, phone, message, date: new Date().toISOString() });
+                        } else {
+                            alert('Please fill in all required fields with valid information.');
+                        }
+                    });
+                }
+            }
+            
+            validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+        }
+        
+        // Visitor counter
+        class VisitorCounter {
+            constructor() {
+                this.count = localStorage.getItem('puspaPetalsVisitors') || 0;
+                this.increment();
+                this.display();
+            }
+            
+            increment() {
+                this.count++;
+                localStorage.setItem('puspaPetalsVisitors', this.count);
+            }
+            
+            display() {
+                const visitorNumber = document.getElementById('visitor-number');
+                if (visitorNumber) {
+                    visitorNumber.textContent = this.count;
+                }
+                
+                // Log to console
+                console.log(`Welcome to Puspa Petals! Visitor #${this.count}`);
+            }
+        }
+        
+        // Mobile menu
+        class MobileMenu {
+            constructor() {
+                this.menuBtn = document.querySelector('.mobile-menu-btn');
+                this.navList = document.querySelector('.nav-list');
+                this.setupMenu();
+            }
+            
+            setupMenu() {
+                if (this.menuBtn && this.navList) {
+                    this.menuBtn.addEventListener('click', () => {
+                        const isExpanded = this.menuBtn.getAttribute('aria-expanded') === 'true';
+                        this.menuBtn.setAttribute('aria-expanded', !isExpanded);
+                        this.navList.classList.toggle('active');
+                    });
+                    
+                    // Close menu when clicking outside
+                    document.addEventListener('click', (e) => {
+                        if (!this.menuBtn.contains(e.target) && !this.navList.contains(e.target)) {
+                            this.menuBtn.setAttribute('aria-expanded', 'false');
+                            this.navList.classList.remove('active');
+                        }
+                    });
+                }
+            }
+        }
+        
+        // Smooth scrolling
+        class SmoothScroller {
+            constructor() {
+                this.setupSmoothScrolling();
+            }
+            
+            setupSmoothScrolling() {
+                document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', (e) => {
+                        const href = anchor.getAttribute('href');
+                        
+                        if (href === '#') return;
+                        
+                        e.preventDefault();
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {
+                            // Close mobile menu if open
+                            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+                            const navList = document.querySelector('.nav-list');
+                            if (mobileMenuBtn && navList) {
+                                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                                navList.classList.remove('active');
+                            }
+                            
+                            // Scroll to element
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Update URL without page jump
+                            history.pushState(null, null, href);
+                        }
+                    });
+                });
+            }
+        }
+        
+        // Colorblind Accessibility Mode
+        class ColorblindMode {
+            constructor() {
+                this.currentMode = localStorage.getItem('colorblindMode') || 'default';
+                this.init();
+            }
+            
+            init() {
+                // Only apply mode if it's NOT 'default'
+                if (this.currentMode !== 'default') {
+                    this.applyMode(this.currentMode);
+                }
+                this.setupEventListeners();
+            }
+            
+            setupEventListeners() {
+                const toggleBtn = document.getElementById('colorblind-toggle');
+                const optionsPanel = document.getElementById('colorblind-options');
+                
+                if (toggleBtn && optionsPanel) {
+                    // Toggle options panel
+                    toggleBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const isHidden = optionsPanel.getAttribute('aria-hidden') === 'true';
+                        optionsPanel.classList.toggle('show', !isHidden);
+                        optionsPanel.setAttribute('aria-hidden', isHidden ? 'false' : 'true');
+                        
+                        // Update button label
+                        const label = isHidden ? 'Close colorblind options' : 'Open colorblind options';
+                        toggleBtn.setAttribute('aria-label', label);
+                    });
+                    
+                    // Mode buttons
+                    document.querySelectorAll('.color-mode-btn').forEach(btn => {
+                        btn.addEventListener('click', (e) => {
+                            const mode = e.target.dataset.mode;
+                            this.setMode(mode);
+                            
+                            // Close options panel
+                            optionsPanel.classList.remove('show');
+                            optionsPanel.setAttribute('aria-hidden', 'true');
+                            toggleBtn.setAttribute('aria-label', 'Open colorblind options');
+                            
+                            // Update active button
+                            document.querySelectorAll('.color-mode-btn').forEach(b => {
+                                b.classList.remove('active');
+                            });
+                            e.target.classList.add('active');
+                        });
+                    });
+                    
+                    // Close panel when clicking outside
+                    document.addEventListener('click', (e) => {
+                        if (!toggleBtn.contains(e.target) && !optionsPanel.contains(e.target)) {
+                            optionsPanel.classList.remove('show');
+                            optionsPanel.setAttribute('aria-hidden', 'true');
+                            toggleBtn.setAttribute('aria-label', 'Open colorblind options');
+                        }
+                    });
+                }
+            }
+            
+            setMode(mode) {
+                this.currentMode = mode;
+                localStorage.setItem('colorblindMode', mode);
+                
+                if (mode === 'default') {
+                    // If default is selected, remove all colorblind classes
+                    this.removeAllColorblindModes();
+                } else {
+                    // Apply the selected colorblind mode
+                    this.applyMode(mode);
+                }
+                
+                this.announceModeChange();
+                
+                // Announce to screen readers
+                const modeNames = {
+                    'default': 'Normal color mode (pink theme)',
+                    'protanopia': 'Protanopia (red-weak) mode',
+                    'deuteranopia': 'Deuteranopia (green-weak) mode',
+                    'tritanopia': 'Tritanopia (blue-weak) mode',
+                    'achromatopsia': 'Monochrome mode'
+                };
+                
+                const announcement = document.getElementById('screen-reader-announcement');
+                if (announcement) {
+                    announcement.textContent = `Color mode changed to ${modeNames[mode] || mode}`;
+                }
+            }
+            
+            applyMode(mode) {
+                // Remove all colorblind classes first
+                this.removeAllColorblindModes();
+                
+                // Add current mode class (only if not default)
+                if (mode !== 'default') {
+                    document.body.classList.add(`colorblind-${mode}`);
+                }
+                
+                // Update flower item patterns for monochrome
+                if (mode === 'achromatopsia') {
+                    this.addPatternIndicators();
+                } else {
+                    this.removePatternIndicators();
+                }
+                
+                // Set active button
+                document.querySelectorAll('.color-mode-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.mode === mode) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+            
+            removeAllColorblindModes() {
+                document.body.classList.remove(
+                    'colorblind-default',
+                    'colorblind-protanopia',
+                    'colorblind-deuteranopia',
+                    'colorblind-tritanopia',
+                    'colorblind-achromatopsia'
+                );
+                this.removePatternIndicators();
+            }
+            
+            addPatternIndicators() {
+                // Add text indicators for flower types in monochrome mode
+                document.querySelectorAll('.flower-item').forEach(item => {
+                    const flowerType = item.dataset.flower;
+                    const img = item.querySelector('.flower-img');
+                    if (img && !img.querySelector('.pattern-indicator')) {
+                        const indicator = document.createElement('div');
+                        indicator.className = 'pattern-indicator';
+                        indicator.textContent = flowerType ? flowerType.toUpperCase() : 'FLOWER';
+                        indicator.style.cssText = `
+                            position: absolute;
+                            top: 10px;
+                            left: 10px;
+                            background: rgba(0,0,0,0.7);
+                            color: white;
+                            padding: 3px 8px;
+                            border-radius: 3px;
+                            font-size: 10px;
+                            font-weight: bold;
+                            z-index: 2;
+                        `;
+                        img.style.position = 'relative';
+                        img.appendChild(indicator);
+                    }
+                });
+            }
+            
+            removePatternIndicators() {
+                document.querySelectorAll('.pattern-indicator').forEach(indicator => {
+                    indicator.remove();
+                });
+            }
+            
+            announceModeChange() {
+                console.log(`Colorblind mode: ${this.currentMode}`);
+            }
+        }
+        
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Create screen reader announcement element
+            const announcement = document.createElement('div');
+            announcement.id = 'screen-reader-announcement';
+            announcement.className = 'sr-only';
+            announcement.setAttribute('aria-live', 'polite');
+            announcement.setAttribute('aria-atomic', 'true');
+            document.body.appendChild(announcement);
+            
+            // Initialize classes
+            new ShoppingCart();
+            new FormHandler();
+            new VisitorCounter();
+            new MobileMenu();
+            new SmoothScroller();
+            new ColorblindMode(); // Initialize colorblind mode
+            
+            // Update active nav link on scroll
+            window.addEventListener('scroll', () => {
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('nav a[href^="#"]');
+                
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // Keyboard navigation for accessibility
+            document.addEventListener('keydown', (e) => {
+                // Close mobile menu with Escape key
+                if (e.key === 'Escape') {
+                    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+                    const navList = document.querySelector('.nav-list');
+                    if (mobileMenuBtn && navList && navList.classList.contains('active')) {
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                        navList.classList.remove('active');
+                    }
+                }
+                
+                // Navigate cart items with arrow keys
+                if (e.target.classList.contains('quantity-btn')) {
+                    const cartItem = e.target.closest('.cart-item');
+                    if (cartItem) {
+                        if (e.key === 'ArrowUp' || e.key === 'ArrowRight') {
+                            e.target.closest('.cart-item-controls').querySelector('.plus').click();
+                        } else if (e.key === 'ArrowDown' || e.key === 'ArrowLeft') {
+                            e.target.closest('.cart-item-controls').querySelector('.minus').click();
+                        }
+                    }
+                }
+            });
+        });
+        
+        // Handle page visibility for better performance
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'hidden') {
+                // Save cart when leaving page
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+        });
+    </script>
+    
+    <!-- Screen reader only element for announcements -->
+    <div id="screen-reader-announcement" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
